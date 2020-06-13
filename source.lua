@@ -23,8 +23,9 @@ local function recurse(object)
 						lineNumber = line + 1
 						newSource = newSource
 							.. code:sub(1, charPosition - 1)
+							.. "\n"
 							.. code:sub(charPosition):gsub("[^%z\1-\127]", "")
-							.. "\n\n"
+							.. "\n"
 					else
 						newSource = newSource .. code .. "\n"
 					end

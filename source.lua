@@ -24,6 +24,7 @@ local function recurse(object)
 						newSource = newSource
 							.. code:sub(1, charPosition - 1)
 							.. "\n"
+							.. code:sub(1, code:find("%C") - 1)
 							.. code:sub(charPosition):gsub("[^%z\1-\127]", "")
 							.. "\n"
 					else
